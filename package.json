@@ -1,0 +1,26 @@
+{
+  "name": "hkb-9",
+  "version": "1.0.0",
+  "description": "🤮 Bong and Hong  🤑",
+  "main": ".prettierrc.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woowa-techcamp-2020/hkb-9.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woowa-techcamp-2020/hkb-9/issues"
+  },
+  "homepage": "https://github.com/woowa-techcamp-2020/hkb-9#readme"
+}
