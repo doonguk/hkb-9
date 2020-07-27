@@ -3,10 +3,10 @@ module.exports = function (api) {
   
     const presets = [
       [
-        "@babel/preset-env",
+        '@babel/preset-env',
         {
-          targets: "> 1%, not dead",
-          useBuiltIns: "usage",
+          targets: '> 1%, not dead',
+          useBuiltIns: 'usage',
           corejs: 3,
           modules: false,
         },
