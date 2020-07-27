@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "🤮 Bong and Hong  🤑",
   "main": ".prettierrc.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0"
+  },
   "devDependencies": {
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
