@@ -6,3 +6,8 @@ exports.checkUserExist = async (connection, name) => {
   }
   return false;
 };
+
+exports.createUser = async (connection, name) => {
+  const [insertId] = await connection.query(`INSERT INTO user(name) VALUES('${name}')`);
+  return insertId;
+};
