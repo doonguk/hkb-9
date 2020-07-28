@@ -2,8 +2,11 @@
   "name": "hkb-9",
   "version": "1.0.0",
   "description": "🤮 Bong and Hong  🤑",
-  "main": "server/app.js",
+  "main": ".prettierrc.js",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   },
@@ -11,6 +14,7 @@
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
+    "nodemon": "^2.0.4",
     "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
@@ -27,10 +31,9 @@
     "webpack-merge": "^5.0.9"
   },
   "scripts": {
-    "dev": "",
+    "dev:server": "nodemon ./server/index",
     "build": "webpack-dev-server --open --config webpack.dev.js",
-    "build:production": "webpack --config webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:production": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
