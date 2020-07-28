@@ -31,7 +31,7 @@
     "webpack-merge": "^5.0.9"
   },
   "scripts": {
-    "dev:server": "nodemon ./server/index",
+    "dev:server": "cp ./server/.env.dev ./server/.env && nodemon ./server/index",
     "build": "webpack-dev-server --open --config webpack.dev.js",
     "build:production": "webpack --config webpack.prod.js"
   },
