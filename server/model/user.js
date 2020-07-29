@@ -1,15 +1,12 @@
-exports.checkUserExist = async (connection, loginId) => {
+exports.checkUserOne = async (connection, loginId) => {
   const [user] = await connection.query(
     `SELECT * FROM user WHERE login_id='${loginId}'`,
   );
-  if (user[0]) {
-    return true;
-  }
-  return false;
+  return user[0];
 };
 
-exports.findOne = async (connection, loginId) => {
-  const [user] = await connection.query(`SELECT * FROM user WHERE login_id=${loginId} limit 1`);
+exports.findOne = async (connection, loginId, password) => {
+  const [user] = await connection.query(`SELECT * FROM user WHERE login_id='${loginId} and password='${password}' limit 1`);
   return user[0];
 };
 
