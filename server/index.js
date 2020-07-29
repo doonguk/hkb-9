@@ -6,7 +6,7 @@ const { urlencoded, json } = require('express');
 const apiRoutes = require('./routes');
 const { SERVER_PORT } = require('./utils/constants');
 const { errorHandler } = require('./middlewares/error');
-const passportConfig = require('./middlewares/passport');
+const passportConfig = require('./lib/passport');
 
 const app = express();
 

@@ -1,6 +1,13 @@
-exports.checkUserOne = async (connection, loginId) => {
+exports.getUserByLoginId = async (connection, loginId) => {
   const [user] = await connection.query(
     `SELECT * FROM user WHERE login_id='${loginId}'`,
+  );
+  return user[0];
+};
+
+exports.getUserById = async (connection, id) => {
+  const [user] = await connection.query(
+    `SELECT * FROM user WHERE id=${id}`,
   );
   return user[0];
 };
