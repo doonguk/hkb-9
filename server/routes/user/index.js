@@ -1,9 +1,10 @@
 const { Router } = require('express');
-const { getUserController, postUserController } = require('./user-ctrl');
+const { validateUserBody } = require('../../utils/validation');
+const { createUserController, loginController } = require('./user-ctrl');
 
 const router = Router();
 
-router.get('/', getUserController);
-router.post('/', postUserController);
+router.post('/', validateUserBody, createUserController);
+router.post('/login', validateUserBody, loginController);
 
 module.exports = router;

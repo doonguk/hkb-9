@@ -8,6 +8,11 @@ exports.checkUserExist = async (connection, loginId) => {
   return false;
 };
 
+exports.findOne = async (connection, loginId) => {
+  const [user] = await connection.query(`SELECT * FROM user WHERE login_id=${loginId} limit 1`);
+  return user[0];
+};
+
 exports.createUser = async (connection, option) => {
   const { loginId, passwordHash: { password, salt } } = option;
   const [insertId] = await connection.query(

@@ -25,11 +25,7 @@ function createPasswordHash(password) {
   });
 }
 
-exports.getUserController = (req, res) => {
-  res.status(200).json({ name: 'bong', age: 900 });
-};
-
-exports.postUserController = async (req, res, next) => { // create user
+exports.createUserController = async (req, res, next) => { // create user
   try {
     const { loginId, password } = req.body;
     const connection = await pool.getConnection();
@@ -44,6 +40,25 @@ exports.postUserController = async (req, res, next) => { // create user
       passwordHash,
     });
     res.status(201).json('');
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.loginController = async (req, res, next) => {
+  try {
+    const { loginId, password } = req.body;
+    const passwordHash = await createPasswordHash(password);
+    const connection = await pool.getConnection();
+    const user = await User.findOne(connection, loginId);
+    if (!user) {
+      res.status(404).json(''); // 없는 유저
+      return;
+    }
+    if (passwordHash.password === user.password) {
+      next();
+    }
+    res.status(403).json(''); // 비번 틀림
   } catch (e) {
     next(e);
   }
