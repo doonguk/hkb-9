@@ -31,8 +31,19 @@
     "webpack-merge": "^5.0.9",
     "morgan": "^1.10.0"
   },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
   "scripts": {
-    "dev:server": "cp ./server/.env.dev ./server/.env && nodemon ./server/index",
+    "dev:server": "cp .env.dev .env && nodemon ./server/index",
     "build": "webpack-dev-server --open --config webpack.dev.js",
     "build:production": "webpack --config webpack.prod.js"
   },
