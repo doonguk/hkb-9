@@ -2,6 +2,7 @@
 import { calendarPageTemplate } from 'utils/template';
 import { Header } from '../components/common/Header';
 import { SelectMonth } from '../components/common/SelectMonth';
+import { PageFilter } from '../components/common/PageFilter';
 import { Calendar } from '../components/Calendar';
 
 export default function CalendarPage() {
@@ -14,6 +15,7 @@ export default function CalendarPage() {
     this.$target.innerHTML = calendarPageTemplate;
     new Header();
     new SelectMonth();
+    new PageFilter();
     new Calendar();
   };
 

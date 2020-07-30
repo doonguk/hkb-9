@@ -6,7 +6,7 @@ export const headerTemplate = `<header>
   </div>
 </header>`;
 
-/* Common Component Template End */
+/* Common Component Template Start */
 
 export const selectMonthTemplate = `
   <i class="f7-icons">arrowtriangle_left</i>
@@ -14,8 +14,19 @@ export const selectMonthTemplate = `
   <i class="f7-icons">arrowtriangle_right</i>
 `;
 
+export const pageFilterTemplate = `
+  <div class="filter-box">
+    <button class="log">내역</button>
+    <button class="calendar">달력</button>
+    <button class="statics">통계</button>
+  </div>
+`;
+
+/* Common Component Template End */
+
 export const calendarPageTemplate = `
   <header></header>
   <div class="select-month"></div>
+  <div class="page-filters"></div>
   <main></main>
 `;

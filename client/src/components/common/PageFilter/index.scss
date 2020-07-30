@@ -1,0 +1,36 @@
+@import '../../../styles/definition';
+
+.page-filters {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+
+  .filter-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 30%;
+      background-color: $woowa-color-week;
+      color: #eeeeee;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $woowa-color;
+      }
+    }
+  
+    button + button {
+      margin-left: 3%;
+    }
+  }
+}

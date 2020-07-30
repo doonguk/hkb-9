@@ -5,4 +5,5 @@ export const TAG_NAME = {
 
 export const CLASS_NAME = {
   SELECT_MONTH: 'select-month',
+  PAGE_FILTER: 'page-filters',
 };
