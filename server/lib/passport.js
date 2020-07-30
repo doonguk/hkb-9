@@ -32,7 +32,8 @@ module.exports = () => {
       if (!user) {
         return done(null, false, { message: 'Not Found User' }); // 3번째 인자는 사용자(?)에러 -> 없는 유저, 비번 틀리거나 등
       }
-      if (verifyPassword(password, user.password, user.salt)) {
+      if (await verifyPassword(password, user.password, user.salt)) {
+        connection.release();
         return done(null, user); // 로그인 성공!
       }
       connection.release();
@@ -52,8 +53,10 @@ module.exports = () => {
     try {
       const user = await User.getUserById(connection, payload.userId);
       if (!user) {
+        connection.release();
         return done(null, false, { message: 'invaliad token' });
       }
+      connection.release();
       return done(null, user);
     } catch (e) {
       connection.release();

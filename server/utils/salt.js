@@ -36,7 +36,7 @@ function verifyPassword(password, passwordHash, salt) {
         resolve(false);
       });
     } catch (e) {
-      reject(e);
+      resolve(false);
     }
   });
 }
