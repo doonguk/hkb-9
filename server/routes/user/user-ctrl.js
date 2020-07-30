@@ -8,7 +8,7 @@ exports.getUserController = (req, res) => {
 exports.postUserController = async (req, res, next) => { // create user
   try {
     const { name } = req.body;
-    const connection = await pool.getConnection();
+    const connection = await pool.getConnection());
     if (await User.checkUserExist(connection, name)) {
       res.status(409).json('');
       return;
