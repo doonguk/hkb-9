@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 const config = {
-  entry: './client/index.js',
+  entry: './client/src/App.js',
   output: {
     path: path.resolve(__dirname, './client/dist'),
     filename: 'build.js',
@@ -21,7 +21,7 @@ const config = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|ico)$/,
+        test: /\.(png|jpe?g|gif|svg|ico|woff|woff2|eot|ttf)$/,
         use: [
           {
             loader: 'url-loader',
