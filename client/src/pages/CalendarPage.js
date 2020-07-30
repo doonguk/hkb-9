@@ -1,5 +1,8 @@
 /* eslint-disable no-new */
-import { Header } from '../components/common';
+import { calendarPageTemplate } from 'utils/template';
+import { Header } from '../components/common/Header';
+import { SelectMonth } from '../components/common/SelectMonth';
+import { Calendar } from '../components/Calendar';
 
 export default function CalendarPage() {
   if (new.target !== CalendarPage) {
@@ -7,7 +10,11 @@ export default function CalendarPage() {
   }
 
   this.init = () => {
+    this.$target = document.querySelector('#App');
+    this.$target.innerHTML = calendarPageTemplate;
     new Header();
+    new SelectMonth();
+    new Calendar();
   };
 
   this.init();
