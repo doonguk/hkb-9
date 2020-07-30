@@ -6,12 +6,10 @@ export const headerTemplate = `<header>
   </div>
 </header>`;
 
-/* Common Component Template Start */
-
 export const selectMonthTemplate = `
-  <i class="f7-icons">arrowtriangle_left</i>
+  <i class="f7-icons prev">arrowtriangle_left</i>
   <span class="month">6월</span>
-  <i class="f7-icons">arrowtriangle_right</i>
+  <i class="f7-icons next">arrowtriangle_right</i>
 `;
 
 export const pageFilterTemplate = `
@@ -24,9 +22,23 @@ export const pageFilterTemplate = `
 
 /* Common Component Template End */
 
+export const calendarTemplate = `
+  <div class="weekdays">
+    <div class="red">일</div>
+    <div>월</div>
+    <div>화</div>
+    <div>수</div>
+    <div>목</div>
+    <div>금</div>
+    <div>토</div>
+  </div>
+  <div class="days">
+  </div>
+`;
+
 export const calendarPageTemplate = `
   <header></header>
   <div class="select-month"></div>
   <div class="page-filters"></div>
-  <main></main>
+  <main class="calendar-container"></main>
 `;
