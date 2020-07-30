@@ -14,9 +14,15 @@ export default function CalendarPage() {
     this.$target = document.querySelector('#App');
     this.$target.innerHTML = calendarPageTemplate;
     new Header();
-    new SelectMonth();
+    new SelectMonth({
+      onClickButton: this.onClickButton,
+    });
     new PageFilter();
-    new Calendar();
+    this.Calendar = new Calendar();
+  };
+
+  this.onClickButton = (type) => {
+    this.Calendar.setState(type);
   };
 
   this.init();

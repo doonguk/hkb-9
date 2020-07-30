@@ -17,6 +17,17 @@ export default function Calendar() {
     this.render();
   };
 
+  this.setState = (type) => {
+    if (type === 'prev') {
+      this.date.setMonth(this.date.getMonth() - 1);
+      this.render();
+      return;
+    }
+
+    this.date.setMonth(this.date.getMonth() + 1);
+    this.render();
+  };
+
   this.render = () => {
     this.date.setDate(1); // 현재 달을 1일로 초기화
 
@@ -26,8 +37,6 @@ export default function Calendar() {
       this.date.getMonth() + 1,
       0,
     ).getDay();
-
-    console.log(lastDayIndex);
 
     const nextDayIndex = 7 - lastDayIndex - 1;
 

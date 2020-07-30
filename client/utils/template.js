@@ -6,9 +6,9 @@ export const headerTemplate = `<header>
   </div>
 </header>`;
 
-export const selectMonthTemplate = `
+export const selectMonthTemplate = (currentMonth) => `
   <i class="f7-icons prev">arrowtriangle_left</i>
-  <span class="month">6월</span>
+  <span class="month">${currentMonth}월</span>
   <i class="f7-icons next">arrowtriangle_right</i>
 `;
 
