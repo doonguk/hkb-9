@@ -1,5 +1,6 @@
 import './index.scss';
-import { headerHTMLTemplate } from 'utils/template';
+import { headerTemplate } from 'utils/template';
+import { TAG_NAME } from 'utils/constants';
 
 export default function Header() {
   if (new.target !== Header) {
@@ -7,8 +8,8 @@ export default function Header() {
   }
 
   this.init = () => {
-    this.$target = document.querySelector('#App');
-    this.$target.innerHTML = headerHTMLTemplate;
+    this.$target = document.querySelector(TAG_NAME.HEADER);
+    this.$target.innerHTML = headerTemplate;
   };
 
   this.init();
